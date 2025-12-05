@@ -1,98 +1,70 @@
 import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
-const Header = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
   return (
-    <nav className="bg-primary text-light fixed w-full z-50">
-      <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
-        {/* Logo */}
-        <a className="text-2xl font-bold" href="#home">
-          Vibhakar
-        </a>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-light/70 dark:bg-primary/80 backdrop-blur-xl shadow-md transition-all duration-500">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          
+          {/* Logo */}
+          <a href="/" className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-accent via-primary to-muted bg-clip-text text-transparent hover:from-muted hover:via-accent hover:to-primary transition-all duration-500">
+            Vibhakar
+          </a>
 
-        {/* Hamburger Menu (Mobile) */}
-        <button
-          className="text-light md:hidden focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle navigation"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          {/* Desktop Nav */}
+          <div className="hidden md:flex space-x-6 items-center">
+            {navLinks.map(link => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="relative text-primary dark:text-light font-medium px-2 py-1 group hover:text-accent transition"
+              >
+                {link.name}
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden p-2 rounded-lg bg-accent/10 text-accent hover:bg-accent/20 transition"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
 
-        {/* Navigation Links */}
-        <div
-          className={`${
-            isOpen ? 'block' : 'hidden'
-          } md:flex md:items-center md:space-x-8 ml-auto`} // Added ml-auto
-        >
-          <ul className="flex flex-col md:flex-row md:space-x-8 text-base">
-            <li>
-              <a
-                href="#home"
-                className="block py-2 md:py-0 hover:text-accent transition duration-300"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className="block py-2 md:py-0 hover:text-accent transition duration-300"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#services"
-                className="block py-2 md:py-0 hover:text-accent transition duration-300"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                className="block py-2 md:py-0 hover:text-accent transition duration-300"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#blog"
-                className="block py-2 md:py-0 hover:text-accent transition duration-300"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="block py-2 md:py-0 hover:text-accent transition duration-300"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
+      {/* Mobile Menu */}
+      <div className={`md:hidden transition-all duration-500 overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="px-4 pb-4 pt-2 space-y-2 bg-light dark:bg-primary border-t border-accent/20">
+          {navLinks.map(link => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2 rounded-lg text-primary dark:text-light hover:text-accent hover:bg-accent/10 transition"
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
       </div>
     </nav>
   );
 };
 
-export default Header;
+export default Navbar;
