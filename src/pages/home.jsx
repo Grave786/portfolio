@@ -1,5 +1,4 @@
 import React from 'react';
-import Slider from 'react-slick';
 import About from '../components/about';
 import Services from '../components/Services';
 import Projects from '../components/project';
@@ -10,27 +9,6 @@ import Hero from '../components/hero';
 import ContactForm from '../components/ContactForm';
 
 const Home = () => {
-  // Slick carousel settings
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    fade: true,
-    arrows: false, // Hide default arrows to focus on dots
-    appendDots: dots => (
-      <div>
-        <ul style={{ margin: "0px" }}> {dots} </ul>
-      </div>
-    ),
-    customPaging: i => (
-      <div className="w-3 h-3 bg-accent rounded-full mx-1"></div>
-    ),
-  };
-
   return (
     <div>
       <section className="mt-16 ">

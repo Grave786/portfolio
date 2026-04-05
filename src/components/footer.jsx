@@ -160,7 +160,7 @@
 
 // src/components/Footer.js
 import React from 'react';
-import { MapPin, Phone, Mail, Twitter, Facebook, Instagram, ChevronRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Linkedin, Github, Award, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -183,14 +183,14 @@ const Footer = () => {
               Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-light hover:bg-accent hover:scale-110 transition duration-300 ease-out" aria-label="Twitter">
-                <Twitter size={18} />
+              <a href="https://www.linkedin.com/in/gravegolu" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-light hover:bg-accent hover:scale-110 transition duration-300 ease-out" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-light hover:bg-accent hover:scale-110 transition duration-300 ease-out" aria-label="Facebook">
-                <Facebook size={18} />
+              <a href="https://github.com/gravegolu" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-light hover:bg-accent hover:scale-110 transition duration-300 ease-out" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <Github size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-light hover:bg-accent hover:scale-110 transition duration-300 ease-out" aria-label="Instagram">
-                <Instagram size={18} />
+              <a href="https://www.hackerrank.com/profile/golugrave" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-light hover:bg-accent hover:scale-110 transition duration-300 ease-out" aria-label="HackerRank" target="_blank" rel="noopener noreferrer">
+                <Award size={18} />
               </a>
             </div>
           </div>
@@ -285,7 +285,7 @@ const Footer = () => {
           <p className="text-light text-sm">
             &copy; <span>{new Date().getFullYear()}</span> All rights reserved. Made with{' '}
             <span className="text-accent inline-block animate-pulse">♥</span> by{' '}
-            <a href="#" className="text-light hover:text-accent font-semibold transition duration-300 hover:underline" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/gravegolu" className="text-light hover:text-accent font-semibold transition duration-300 hover:underline" target="_blank" rel="noopener noreferrer">
               Vibhakar
             </a>
           </p>

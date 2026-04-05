@@ -53,21 +53,21 @@ export default function Hero() {
           <div className="relative z-10 transform rotate-[-6deg] hover:rotate-[-3deg] hover:scale-105 transition-all shadow-xl rounded-xl overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1542744095-291d1f67b221?fit=crop&w=600&q=80"
-              alt="Tech Image 1"
+              alt="Developers collaborating at a desk"
               className="object-cover w-full h-48 rounded-xl"
             />
           </div>
           <div className="relative z-20 transform rotate-[5deg] hover:rotate-[2deg] hover:scale-105 transition-all shadow-xl rounded-xl overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=600&q=80"
-              alt="Tech Image 2"
+              alt="Team working together in a meeting"
               className="object-cover w-full h-48 rounded-xl"
             />
           </div>
           <div className="col-span-2 relative z-0 transform rotate-[2deg] hover:rotate-[0deg] hover:scale-105 transition-all shadow-2xl rounded-xl overflow-hidden mt-4">
             <img
               src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?fit=crop&w=1080&q=80"
-              alt="Tech Image 3"
+              alt="Developer workspace with laptop and code"
               className="object-cover w-full h-60 rounded-xl"
             />
           </div>
